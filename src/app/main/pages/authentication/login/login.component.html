@@ -24,30 +24,43 @@
             <div class="title">SIGN IN</div>
 
             <form name="loginForm" [formGroup]="loginForm" novalidate>
-                    <mat-label>Email</mat-label>
+                    <mat-label class="secondary-text">Email</mat-label>
+    
                 <mat-form-field appearance="none">
-                    <input matInput formControlName="email" placeholder="Email.doxa@gmail.com">
+                    <input type="email" matInput formControlName="email" placeholder="Email.doxa@gmail.com">
                     
-                    <!-- <mat-icon matSuffix >mail</mat-icon> -->
-                    <mat-error *ngIf="loginForm.get('email').hasError('required')">
-                        Email is required
-                    </mat-error>
-                    <mat-error *ngIf="!loginForm.get('email').hasError('required') &&
-                                loginForm.get('email').hasError('email')">
-                        Please enter a valid email address
-                    </mat-error>
+                    <mat-icon matSuffix class="secondary-text">local_post_office</mat-icon>
+                    
+                    <div  *ngIf="loginForm.get('email').hasError('required') && loginForm.controls.email.touched">
+                        <app-alert>
+                            <p>Email is required</p>
+                        </app-alert>
+                    </div>
+                    <div *ngIf="!loginForm.get('email').hasError('required') &&
+                                loginForm.get('email').hasError('email') && loginForm.controls.email.touched">
+                        <app-alert>
+                            <p>Please enter a valid email address</p>
+                        </app-alert>
+                    </div>
                 </mat-form-field>
 
-                <mat-label>Password</mat-label>
+                <mat-label class="secondary-text">Password</mat-label>
                 <mat-form-field appearance="none">
                     <input matInput type="password" formControlName="password" placeholder="********">
-                    <!-- <mat-icon matSuffix class="secondary-text">https</mat-icon> -->
-                    <mat-error>
-                        Password is required
-                    </mat-error>
+                    <mat-icon matSuffix class="secondary-text">https</mat-icon>
+                    <div *ngIf="loginForm.get('password').hasError('required') && loginForm.controls.password.touched ">
+                        <app-alert>
+                            <p>Password is required</p>
+                        </app-alert>
+                    </div>
+                    <div *ngIf="!loginForm.get('password').hasError('required') && loginForm.controls.password.touched && loginForm.get('password').errors?.pattern">
+                        <app-alert>
+                            <p>Password is at least 8 character</p>
+                        </app-alert>
+                    </div>
                 </mat-form-field>
 
-                <div class="remember-forgot-password" fxLayout="row" fxLayout.xs="column"
+                <div class="remember-forgot-password" fxLayout="row" 
                     fxLayoutAlign="space-between center">
                     <mat-checkbox class="remember-me" aria-label="Remember Me" [checked]="true">
                         Remember Me

@@ -66,32 +66,44 @@
                     width: 100%;
                     border: none;
                 }
-                input{
+                input[type='password'],
+                input[type='email']
+                {
                     width: 100%;
                     height: 48px;
                     outline: none;
-                    
-                    -webkit-box-shadow: 0px 4px 16px #455b6314;
-                    -moz-box-shadow: 0px 4px 16px #455b6314;
-                    box-shadow: 0px 4px 16px #455b6314;
+                    -webkit-box-shadow: 0px 3px 16px #00000029 !important;
+                    -moz-box-shadow:  0px 3px 16px #00000029 !important;
+                    box-shadow: 0px 3px 16px #00000029 !important;
+                    border-radius: 8px;
                     opacity: 0.8;
+                    position: relative;
+                    padding-left: 8px;
                 }
-                mat-checkbox {
-                    margin: 0;
+                mat-icon{
+                    position: absolute;
+                    top: -34px;
+                    left: -26px;
                 }
-
+                
                 .remember-forgot-password {
-                    font-size: 13px;
+                    font-size: 14px;
                     margin-top: 8px;
-
+                    width: 100%;
+                   
                     .remember-me {
-                        margin-bottom: 16px
+                        margin-bottom: 16px;
+                        @include media-breakpoint('xs') {
+                            font-size: 12px;
+                        }
                     }
 
                     .forgot-password {
-                        font-size: 13px;
                         font-weight: 600;
-                        margin-bottom: 16px
+                        margin-bottom: 16px;
+                        @include media-breakpoint('xs') {
+                            font-size: 12px;
+                        }
                     }
                 }
 
@@ -115,6 +127,9 @@
                 .text {
                     margin-right: 8px;
                 }
+            }
+            a{
+                text-decoration: none;
             }
 
         }

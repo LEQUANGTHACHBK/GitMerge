@@ -1,5 +1,5 @@
 import { Component, OnInit, OnDestroy, ViewEncapsulation } from '@angular/core';
-import { AbstractControl, FormBuilder, FormGroup, ValidationErrors, ValidatorFn, Validators } from '@angular/forms';
+import { AbstractControl, FormBuilder, FormGroup, ValidationErrors, ValidatorFn, Validators, FormControl } from '@angular/forms';
 import { Subject} from 'rxjs';
 import { takeUntil } from 'rxjs/internal/operators';
 
@@ -10,7 +10,7 @@ import { animation } from '@angular/animations';
   selector: 'app-register',
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.scss'],
-  encapsulation: ViewEncapsulation.None,
+  encapsulation: ViewEncapsulation.Emulated,
   animations: fuseAnimations
 })
 export class RegisterComponent implements OnInit {
@@ -44,8 +44,10 @@ export class RegisterComponent implements OnInit {
       fname: ['', Validators.required],
       lname: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
-      phoneNum: ['', Validators.required],
-
+      phoneNum: ['', [Validators.required, phoneNumberValidator]],
+      AdId:[],
+      AdNa:[],
+      password: ['', [Validators.required, Validators.pattern('^.{8,}$')]]
     });
 
     // Update the validity of the 'passwordConfirm' field
@@ -63,4 +65,10 @@ export class RegisterComponent implements OnInit {
     this._unsubscribeAll.complete();
   }
 
+}
+function phoneNumberValidator(registerForm : FormControl){
+  if(isNaN(registerForm.value) === false){
+    return null;
+  }
+  return { phoneNum : true};
 }

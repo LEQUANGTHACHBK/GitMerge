@@ -2,7 +2,7 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import {FormBuilder,FormGroup,Validators} from '@angular/forms';
 
 import { FuseConfigService} from '@fuse/services/config.service';
-import { fuseAnimations } from '@fuse/animations'
+import { fuseAnimations } from '@fuse/animations';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -39,8 +39,8 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
     this.loginForm = this._formBuilder.group({
       email: ['', [Validators.required, Validators.email]],
-      password: ['', Validators.required]
+      password: ['', [Validators.required, Validators.pattern('^.{8,}$')]]
     });
   }
 
-}
+} 

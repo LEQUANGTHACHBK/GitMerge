@@ -18,6 +18,7 @@
       padding: 32px;
       text-align: center;
       background-color: white;
+      color: #788190 ;
       opacity: 1;
       @include mat-elevation(16);
 
@@ -64,36 +65,48 @@
             width: 100%;
             border: none;
         }
-        input{
+        input,
+        mat-select{
             width: 100%;
             height: 48px;
             outline: none;
-            
-            -webkit-box-shadow: 0px 4px 16px #455b6314;
-            -moz-box-shadow: 0px 4px 16px #455b6314;
-            box-shadow: 0px 4px 16px #455b6314;
+            line-height: 48px;
+            -webkit-box-shadow: 0px 3px 16px #00000029 !important;
+            -moz-box-shadow:  0px 3px 16px #00000029 !important;
+            box-shadow: 0px 3px 16px #00000029 !important;
+            border-radius: 8px;
             opacity: 0.8;
+            padding-left: 8px;
+            color: #788190 !important;
         }
-        
+        mat-select{
+          margin-top: 5px;
+        }
+        mat-option{
+          color: #788190 !important;
+        }
         #phoneNumber{
             // background-color: red;
             width: 100%;
             display: block;
+            margin-bottom: 10px;
             #phoneCode{
                 width: 40%;
                 display: inline-block;
-                // background-color: green;
                 margin-right: 10%;
-                height: 60px;
+                // height: 60px;
                 vertical-align: middle;
             }
             #phoneNum{
                 width: 50%;
                 input{
-                    height: 60px;
-                    margin-top: 5px;
+                    // height: 60px;
+                    // margin-top: 5px;
                     vertical-align: middle;
                 }
+            }
+            #alertPhoneNumber{
+              margin-top:-20px;
             }
         }
         mat-checkbox {
@@ -102,11 +115,11 @@
 
         .terms {
           margin: 16px 0 32px 0;
+          font-size: 14px;
           mat-checkbox{
               margin-right: 10px;
           }
           a {
-            font-size: 16px;
             margin-left: 4px;
           }
         }
@@ -123,7 +136,9 @@
             }
         }
       }
-
+      a{
+        text-decoration: none;
+      }
       .register {
         margin: 32px auto 24px auto;
         font-weight: 600;

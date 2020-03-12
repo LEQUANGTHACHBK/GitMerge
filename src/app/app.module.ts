@@ -17,7 +17,11 @@ import { AppComponent } from 'app/app.component';
 import { LayoutModule } from 'app/layout/layout.module';
 import { SampleModule } from 'app/main/sample/sample.module';
 import { PagesModule} from './main/pages/pages.module';
-
+import { ShareModule } from './main/_shared/_share.module';
+import { LoginComponent} from './main/pages/authentication/login/login.component';
+import { RegisterComponent } from './main/pages/authentication/register/register.component'
+import { VerifyCodeComponent } from './main/pages/authentication/verify-code/verify-code.component'
+import { ForgotPasswordComponent } from './main/pages/authentication/forgot-password/forgot-password.component'
 import { MultiSalesModule } from './main/multisales/multisale.module';
 import { ModulesModule } from './main/modulesAdmin/modules.module'
 
@@ -26,19 +30,39 @@ const appRoutes: Routes = [
     //     path      : 'pages',
     //     loadChildren: './main/pages/pages.module#PagesModule'
     // },
+    {   path: 'login',
+        component: LoginComponent
+    },
     {
-        path      : 'multisales',
+        path: 'register',
+        component: RegisterComponent
+    },
+    {
+        path : 'register/verify',
+        component: VerifyCodeComponent
+    },
+    {
+        path: 'forgotpassword',
+        component: ForgotPasswordComponent
+    },
+    {
+        path: '**',
+        redirectTo : 'login'
+    },
+    
+    {
+        path: 'multisales',
         loadChildren: './main/multisales/multisales.module#MultiSalesModule'
     },
     {
-        path      : 'modules',
+        path: 'modules',
         loadChildren: './main/modulesAdmin/modules.module#ModulesModule'
     }
 ];
 
 @NgModule({
     declarations: [
-        AppComponent,
+        AppComponent
     ],
     imports     : [
         BrowserModule,
@@ -48,8 +72,7 @@ const appRoutes: Routes = [
         TranslateModule.forRoot(),
 
         PagesModule,
-        // Material moment date module
-
+        ShareModule,
         MultiSalesModule,
         ModulesModule,
 

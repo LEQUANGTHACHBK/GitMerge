@@ -6,20 +6,16 @@ import { ForgotPasswordModule} from './authentication/forgot-password/forgot-pas
 import { RegisterModule} from './authentication/register/register.module';
 import { VerifyCodeModule} from './authentication/verify-code/verifyCode.module'
 
-//Products
-
 @NgModule({
     imports: [
         // Authentication
         LoginModule,
         ForgotPasswordModule,
         RegisterModule,
-        VerifyCodeModule,
-
-
-
+        VerifyCodeModule
     ],
     exports:[
+        
         // LoginComponent,
         // ForgotPasswordComponent,
         // RegisterComponent,
