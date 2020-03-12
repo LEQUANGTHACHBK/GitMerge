@@ -46,18 +46,17 @@ const appRoutes: Routes = [
         component: ForgotPasswordComponent
     },
     {
-        path: '**',
-        redirectTo : 'login'
-    },
-    
-    {
         path: 'multisales',
         loadChildren: './main/multisales/multisales.module#MultiSalesModule'
     },
     {
         path: 'modules',
         loadChildren: './main/modulesAdmin/modules.module#ModulesModule'
-    }
+    },
+    {
+        path: '**',
+        redirectTo: 'login'
+    },
 ];
 
 @NgModule({

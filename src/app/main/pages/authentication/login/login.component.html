@@ -62,16 +62,16 @@
 
                 <div class="remember-forgot-password" fxLayout="row" 
                     fxLayoutAlign="space-between center">
-                    <mat-checkbox class="remember-me" aria-label="Remember Me" [checked]="true">
+                    <mat-checkbox class="remember-me" aria-label="Remember Me" [checked]="true" color="primary">
                         Remember Me
                     </mat-checkbox>
 
-                    <a class="forgot-password" [routerLink]="'/pages/auth/forgot-password'">
+                    <a class="forgot-password" [routerLink]="'/forgotpassword'">
                         Forgot Password?
                     </a>
                 </div>
 
-                <button mat-raised-button color="accent" class="submit-button" aria-label="LOG IN"
+                <button mat-raised-button color="primary" class="submit-button" aria-label="LOG IN"
                     [disabled]="loginForm.invalid">
                     SIGN IN
                 </button>
@@ -79,7 +79,7 @@
             </form>
 
             <div class="register" fxLayout="column" fxLayoutAlign="center center">
-                <span class="text">Don't have an account? <a class="link" [routerLink]="'/pages/auth/register'">Sign Up</a></span>
+                <span class="text">Don't have an account ? <a class="link" [routerLink]="'/register'">&nbsp; Sign Up</a></span>
                 
             </div>
 

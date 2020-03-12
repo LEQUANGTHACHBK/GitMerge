@@ -55,7 +55,7 @@
 
                 <mat-label class="secondary-text">Designation</mat-label>
                 <mat-form-field appearance="none" >
-                    <mat-select value="mr" color="secondary-text">
+                    <mat-select value="mr" >
                         <mat-option value="mr"> Mr.</mat-option>
                         <mat-option value="ms"> Ms.</mat-option>
                         <mat-option value="mrs"> Mrs.</mat-option>
@@ -129,7 +129,7 @@
 
 
                 <div class="terms" fxLayout="row" fxLayoutAlign="center center">
-                    <mat-checkbox name="terms" aria-label="I read and accept" required></mat-checkbox>
+                    <mat-checkbox name="terms" aria-label="I read and accept" required color="warn"></mat-checkbox>
                     <span> I agrees to <a href="#"> Term of Use</a> and <a href="#">Privacy Policy</a> Provided by Thermomix.</span>
                 </div>
                 
@@ -141,7 +141,7 @@
             </form>
 
             <div class="register" fxLayout="column" fxLayoutAlign="center center">
-                <span class="text">Already have an account? <a class="link" [routerLink]="'/pages/auth/login'">Sign In</a></span>
+                <span class="text">Already have an account ? <a class="link" [routerLink]="'/login'">&nbsp; Sign In</a></span>
                 
             </div>
 
