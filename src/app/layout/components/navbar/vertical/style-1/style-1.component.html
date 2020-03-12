@@ -1,0 +1,66 @@
+<div class="navbar-top" *ngIf='show' [ngClass]="fuseConfig.layout.navbar.primaryBackground">
+
+  <div class="logo" *ngIf="isShow" fxShow.gt-xs fxShow.gt-sm>
+    <button mat-icon-button class="toggle-sidebar-folded" (click)="onclick()"  >
+      <mat-icon class="secondary-text">apps</mat-icon>
+    </button>
+  </div>
+
+  <div class="text" *ngIf="isShow && show" >
+    <div class="doxa" >doxa</div>
+    <div class="slogan" >Let's talk business</div>
+  </div>
+
+  <div>
+    <button mat-icon-button class="toggle-sidebar-folded" (click)="toggleSidebarFolded()" *ngIf="isShow" fxHide.lt-lg>
+      <mat-icon class="secondary-text">chevron_left</mat-icon>
+    </button>
+    <button mat-icon-button class="toggle-sidebar-folded" (click)="toggleSidebarFolded()" *ngIf="!isShow" fxHide.lt-lg>
+      <mat-icon class="secondary-text">chevron_right</mat-icon>
+    </button>
+  </div>
+</div>
+
+<div class="navbar-top" *ngIf='!show' [ngClass]="fuseConfig.layout.navbar.secondaryBackground">
+
+  <div class="logo" *ngIf="isShow">
+    <button mat-icon-button class="toggle-sidebar-folded" (click)="onclick()">
+      <mat-icon class="secondary-text">apps</mat-icon>
+    </button>
+  </div>
+
+  <div class="text" *ngIf="isShow && show" >
+    <div class="doxa" >doxa</div>
+    <div class="slogan" >Let's talk business</div>
+  </div>
+
+  <div>
+    <button mat-icon-button class="toggle-sidebar-folded" (click)="toggleSidebarFolded()" *ngIf="isShow" fxHide.lt-lg>
+      <mat-icon class="secondary-text">chevron_left</mat-icon>
+    </button>
+    <button mat-icon-button class="toggle-sidebar-folded" (click)="toggleSidebarFolded()" *ngIf="!isShow" fxHide.lt-lg>
+      <mat-icon class="secondary-text">chevron_right</mat-icon>
+    </button>
+  </div>
+</div>
+
+
+<div class="navbar-scroll-container" *ngIf='show' [ngClass]="fuseConfig.layout.navbar.primaryBackground" >
+
+  <div class="navbar-content">
+    <fuse-navigation class="material2" layout="vertical"></fuse-navigation>
+  </div>
+
+  <p *ngIf='isShow'>Powered by Doxa | V01.00.01</p>
+
+</div>
+
+<div class="navbar-scroll-container" *ngIf='!show' [ngClass]="fuseConfig.layout.navbar.secondaryBackground">
+
+  <div class="navbar-content">
+    <fuse-navigation class="material2" layout="vertical"></fuse-navigation>
+  </div>
+
+  <p *ngIf='isShow'>Powered by Doxa | V01.00.01</p>
+
+</div>

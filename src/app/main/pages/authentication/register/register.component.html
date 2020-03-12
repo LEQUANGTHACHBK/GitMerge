@@ -1,0 +1,103 @@
+<div id="register" fxLayout="column">
+
+    <div id="register-form-wrapper" fxLayout="column" fxLayoutAlign="center center">
+
+        <div id="register-form" [@animate]="{value:'*',params:{duration:'300ms',y:'100px'}}">
+
+            <div id="FormTitle">
+                <div class="formLogo">
+                    <img src="assets/DoxaImages/thermomix-logo.png">
+                </div>
+                <div class="fromLanguage">
+                    <button mat-icon-button>
+                        <mat-icon>language</mat-icon>
+                    </button>
+                </div>
+            </div>
+
+            <div class="title">SIGN UP</div>
+
+            <form name="registerForm" [formGroup]="registerForm" novalidate>
+                <mat-label>First Name</mat-label>
+                <mat-form-field appearance="none">
+                    <input matInput formControlName="fname" placeholder="Chen">
+                    <mat-error>First Name is required</mat-error>
+                </mat-form-field>
+                <mat-label>Last Name</mat-label>
+                <mat-form-field appearance="none">
+                    <input matInput formControlName="lname" placeholder="Cecilla">
+                    <mat-error>Last Name is required</mat-error>
+                </mat-form-field>
+
+                <mat-label>Email</mat-label>
+                <mat-form-field appearance="none">
+                    <input matInput formControlName="email" placeholder="Cecilla@gmail.com">
+                    <mat-error *ngIf="registerForm.get('email').hasError('required')">
+                        Email is required
+                    </mat-error>
+                    <mat-error *ngIf="registerForm.get('email').hasError('email')">
+                        Please enter a valid email address
+                    </mat-error>
+                </mat-form-field>
+
+                <mat-label>Designation</mat-label>
+                <mat-form-field appearance="outline">
+                    <mat-select value="mr">
+                        <mat-option value="mr"> Mr.</mat-option>
+                        <mat-option value="ms"> Ms.</mat-option>
+                        <mat-option value="mrs"> Mrs.</mat-option>
+                        <mat-option value="miss"> Miss</mat-option>
+                    </mat-select>
+                </mat-form-field>
+
+                <mat-label>Phone Number</mat-label>
+                <div id="phoneNumber">
+                        <mat-form-field appearance="outline" id="phoneCode">
+                            <mat-select value="00">
+                                <mat-option value="00"> +45</mat-option>
+                                <mat-option value="01"> +46</mat-option>
+                                <mat-option value="02"> +47</mat-option>
+                                <mat-option value="03"> +48</mat-option>
+                            </mat-select>
+                            
+                        </mat-form-field>
+                        <mat-form-field appearance="none" id="phoneNum" >
+                            <input  matInput formControlName="phoneNum" placeholder="123456">
+                            <mat-error>Phone Number is required</mat-error>
+                        </mat-form-field>
+                       
+                </div>
+                    
+                    
+                <mat-label>Advisor ID</mat-label>
+                <mat-form-field appearance="none">
+                    <input matInput formControlName="AdId" placeholder="1234">
+                </mat-form-field>
+
+                <mat-label>Advisor Name</mat-label>
+                <mat-form-field appearance="none">
+                    <input matInput formControlName="AdNa" placeholder="Filla Wong">
+                    
+                </mat-form-field>
+                <div class="terms" fxLayout="row" fxLayoutAlign="center center">
+                    <mat-checkbox name="terms" aria-label="I read and accept" required></mat-checkbox>
+                    <span> I agrees to <a href="#"> Term of Use</a> and <a href="#">Privacy Policy</a> Provided by Thermomix.</span>
+                </div>
+                
+                <button mat-raised-button color="accent" class="submit-button" aria-label="CREATE AN ACCOUNT"
+                    [disabled]="registerForm.invalid">
+                    CREATE AN ACCOUNT
+                </button>
+
+            </form>
+
+            <div class="register" fxLayout="column" fxLayoutAlign="center center">
+                <span class="text">Already have an account? <a class="link" [routerLink]="'/pages/auth/login'">Sign In</a></span>
+                
+            </div>
+
+        </div>
+        <h2 class="FormFooter">Powerd by Doxa</h2>
+    </div>
+
+</div>
