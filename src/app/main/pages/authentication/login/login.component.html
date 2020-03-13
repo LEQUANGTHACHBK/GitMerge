@@ -23,7 +23,7 @@
 
             <div class="title">SIGN IN</div>
 
-            <form name="loginForm" [formGroup]="loginForm" novalidate>
+            <form name="loginForm" [formGroup]="loginForm" novalidate (ngSubmit)="onSubmit()">
                     <mat-label class="secondary-text">Email</mat-label>
     
                 <mat-form-field appearance="none">

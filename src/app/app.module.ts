@@ -5,6 +5,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule, Routes } from '@angular/router';
 import { MaterialModule } from './main/angular-Material/material.module'
 import { TranslateModule } from '@ngx-translate/core';
+import { FormsModule, ReactiveFormsModule} from '@angular/forms'
+
 import 'hammerjs';
 
 import { FuseModule } from '@fuse/fuse.module';
@@ -24,14 +26,17 @@ import { VerifyCodeComponent } from './main/pages/authentication/verify-code/ver
 import { ForgotPasswordComponent } from './main/pages/authentication/forgot-password/forgot-password.component'
 import { MultiSalesModule } from './main/multisales/multisale.module';
 import { ModulesModule } from './main/modulesAdmin/modules.module'
+import { NgprimeComponent} from './main/pages/authentication/ngprime/ngprime.component'
+//Service
+import { LoginService} from './main/pages/authentication/login/login.service'
 
 const appRoutes: Routes = [
-    // {
-    //     path      : 'pages',
-    //     loadChildren: './main/pages/pages.module#PagesModule'
-    // },
     {   path: 'login',
         component: LoginComponent
+    },
+    {
+        path :'ngprime',
+        component: NgprimeComponent
     },
     {
         path: 'register',
@@ -69,7 +74,9 @@ const appRoutes: Routes = [
         HttpClientModule,
         RouterModule.forRoot(appRoutes),
         TranslateModule.forRoot(),
-
+        FormsModule,
+        ReactiveFormsModule,
+        
         PagesModule,
         ShareModule,
         MultiSalesModule,
@@ -89,6 +96,8 @@ const appRoutes: Routes = [
         LayoutModule,
         SampleModule
     ],
+    providers: [LoginService]
+    ,
     bootstrap   : [
         AppComponent
     ]

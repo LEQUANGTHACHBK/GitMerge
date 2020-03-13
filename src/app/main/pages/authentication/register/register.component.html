@@ -114,7 +114,7 @@
                         </app-alert>
                     </div>
                     <div
-                        *ngIf="!registerForm.get('password').hasError('required') && registerForm.controls.password.touched && registerForm.get('password').errors?.pattern">
+                        *ngIf="!registerForm.get('password').hasError('required') && registerForm.controls.password.touched && registerForm.get('password').hasError('minlength')">
                         <app-alert>
                             <p>Password is at least 8 character</p>
                         </app-alert>
@@ -124,7 +124,18 @@
 
                 <mat-label class="secondary-text">Confirm Password</mat-label>
                 <mat-form-field appearance="none">
-                    <input matInput type="password" formControlName="password" placeholder="********">
+                    <input matInput type="password" formControlName="confirmPassword" placeholder="********">
+                    <div *ngIf="registerForm.get('confirmPassword').hasError('required') && registerForm.controls.confirmPassword.touched ">
+                        <app-alert>
+                            <p>Confirm Password is required</p>
+                        </app-alert>
+                    </div>
+                    <div
+                        *ngIf="!registerForm.get('confirmPassword').hasError('required') &&  registerForm.get('confirmPassword').hasError('mustMatch') && registerForm.controls.password.touched">
+                        <app-alert>
+                            <p>Confirm password not match</p>
+                        </app-alert>
+                    </div>
                 </mat-form-field>
 
 

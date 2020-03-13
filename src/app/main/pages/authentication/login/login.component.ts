@@ -1,8 +1,10 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
-import {FormBuilder,FormGroup,Validators} from '@angular/forms';
+import {FormBuilder,FormGroup,Validators,FormControl} from '@angular/forms';
 
 import { FuseConfigService} from '@fuse/services/config.service';
 import { fuseAnimations } from '@fuse/animations';
+import { LoginService} from './login.service'
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -15,7 +17,8 @@ export class LoginComponent implements OnInit {
   constructor
   ( 
     private _fuseConfigService : FuseConfigService,
-    private _formBuilder : FormBuilder
+    private _formBuilder : FormBuilder,
+    private _loginService : LoginService
   )         
   {
     this._fuseConfigService.config = {
@@ -41,6 +44,11 @@ export class LoginComponent implements OnInit {
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required, Validators.pattern('^.{8,}$')]]
     });
+  }
+  onSubmit(){
+    console.log(this.loginForm.value);
+    this._loginService.Service_Login(this.loginForm.value)
+    .then(result => console.log(result));
   }
 
 } 

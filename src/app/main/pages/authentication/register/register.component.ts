@@ -6,6 +6,8 @@ import { takeUntil } from 'rxjs/internal/operators';
 import { FuseConfigService } from '@fuse/services/config.service';
 import { fuseAnimations } from '@fuse/animations';
 import { animation } from '@angular/animations';
+
+import { MustMatch } from '../_helper/must-match.validator';
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
@@ -47,7 +49,12 @@ export class RegisterComponent implements OnInit {
       phoneNum: ['', [Validators.required, phoneNumberValidator]],
       AdId:[],
       AdNa:[],
-      password: ['', [Validators.required, Validators.pattern('^.{8,}$')]]
+      // password: ['', [Validators.required, Validators.pattern('^.{8,}$')]],
+      password: ['', [Validators.required, Validators.minLength(8)]],
+      // confirmPassword: ['', [Validators.required,confirmPasswordValidator]],
+      confirmPassword:['',[Validators.required]]
+    },{
+      validator: MustMatch('password', 'confirmPassword')
     });
 
     // Update the validity of the 'passwordConfirm' field

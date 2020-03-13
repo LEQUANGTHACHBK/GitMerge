@@ -4,7 +4,8 @@ import { NgModule } from '@angular/core';
 import { LoginModule} from './authentication/login/login.module';
 import { ForgotPasswordModule} from './authentication/forgot-password/forgot-password.module';
 import { RegisterModule} from './authentication/register/register.module';
-import { VerifyCodeModule} from './authentication/verify-code/verifyCode.module'
+import { VerifyCodeModule} from './authentication/verify-code/verifyCode.module';
+import { NgprimeModule } from './authentication/ngprime/ngprime.module'
 
 @NgModule({
     imports: [
@@ -12,7 +13,8 @@ import { VerifyCodeModule} from './authentication/verify-code/verifyCode.module'
         LoginModule,
         ForgotPasswordModule,
         RegisterModule,
-        VerifyCodeModule
+        VerifyCodeModule,
+        NgprimeModule
     ],
     exports:[
         
@@ -20,7 +22,8 @@ import { VerifyCodeModule} from './authentication/verify-code/verifyCode.module'
         // ForgotPasswordComponent,
         // RegisterComponent,
         // VerifyCodeComponent
-    ]
+    ],
+    declarations: []
 })
 export class PagesModule
 {

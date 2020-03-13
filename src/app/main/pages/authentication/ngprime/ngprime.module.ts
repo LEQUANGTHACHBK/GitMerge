@@ -3,18 +3,18 @@ import { RouterModule } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
 import { FuseSharedModule } from '@fuse/shared.module';
 import { MaterialModule } from '../../../angular-Material/material.module';
-import { LoginComponent} from './login.component';
-import { AlertModule} from '../../../_shared/alert/alert.module'
+import { NgprimeComponent } from './ngprime.component';
+import { AlertModule } from '../../../_shared/alert/alert.module'
 const routes = [
     {
-        path: 'login',
-        component: LoginComponent
+        path: 'ngprime',
+        component: NgprimeComponent
     }
 ];
 
 @NgModule({
     declarations: [
-        LoginComponent
+        NgprimeComponent
     ],
     imports: [
         RouterModule.forChild(routes),
@@ -24,10 +24,10 @@ const routes = [
         AlertModule
     ],
     exports: [
-        LoginComponent,
+        NgprimeComponent,
     ]
 })
 
-export class LoginModule
+export class NgprimeModule
 {
 }
