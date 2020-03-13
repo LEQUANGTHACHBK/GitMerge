@@ -6,7 +6,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { MaterialModule } from './main/angular-Material/material.module'
 import { TranslateModule } from '@ngx-translate/core';
 import { FormsModule, ReactiveFormsModule} from '@angular/forms'
-
+import { DropdownModule } from 'primeng/dropdown';
 import 'hammerjs';
 
 import { FuseModule } from '@fuse/fuse.module';
@@ -94,7 +94,9 @@ const appRoutes: Routes = [
 
         // App modules
         LayoutModule,
-        SampleModule
+        SampleModule,
+        // ngprime
+        DropdownModule
     ],
     providers: [LoginService]
     ,

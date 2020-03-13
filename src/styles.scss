@@ -4,6 +4,9 @@
 // Import app.theme.scss
 @import "app/app.theme";
 
+@import '~primeicons/primeicons.css';
+@import '~primeng/resources/themes/nova-light/theme.css';
+@import '~primeng/resources/primeng.min.css';
 body{
     font-family: 'Open Sans', sans-serif;
 }

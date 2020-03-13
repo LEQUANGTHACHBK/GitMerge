@@ -22,7 +22,9 @@
             "@fuse": [
                 "@fuse/"
             ]
-        }
+        },
+        "resolveJsonModule": true,
+        
     },
     "angularCompilerOptions": {
         "fullTemplateTypeCheck": false,

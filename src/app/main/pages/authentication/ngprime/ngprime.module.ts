@@ -4,7 +4,9 @@ import { TranslateModule } from '@ngx-translate/core';
 import { FuseSharedModule } from '@fuse/shared.module';
 import { MaterialModule } from '../../../angular-Material/material.module';
 import { NgprimeComponent } from './ngprime.component';
-import { AlertModule } from '../../../_shared/alert/alert.module'
+import { AlertModule } from '../../../_shared/alert/alert.module';
+import { DropdownModule } from 'primeng/dropdown';
+// import { SelectItem } from 'primeng/api';
 const routes = [
     {
         path: 'ngprime',
@@ -21,7 +23,8 @@ const routes = [
         TranslateModule,
         FuseSharedModule,
         MaterialModule,
-        AlertModule
+        AlertModule,
+        DropdownModule
     ],
     exports: [
         NgprimeComponent,

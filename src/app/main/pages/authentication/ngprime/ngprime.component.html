@@ -1,1 +1,22 @@
-<p>ngprime works!</p>
+<p-dropdown [options]="cars" [(ngModel)]="selectedCar" [filter]="true" [virtualScroll]="true" itemSize="30">
+    <ng-template let-item pTemplate="selectedItem">
+        <span style="vertical-align:middle">{{item.label}}</span>
+    </ng-template>
+    <ng-template let-car pTemplate="item">
+        <div class="ui-helper-clearfix" style="position: relative;height:25px;">
+            <div style="font-size:14px;float:right;margin-top:4px">{{car.label}}</div>
+        </div>
+    </ng-template>
+</p-dropdown>
+
+<br><br>
+<p-dropdown [options]="dias" [(ngModel)]="selectDial" [filter]="true" [virtualScroll]="true" itemSize="30">
+    <ng-template let-item pTemplate="selectedItem">
+        <span style="vertical-align:middle">{{item.name | Object}}</span>
+    </ng-template>
+    <ng-template let-dia pTemplate="item">
+        <div class="ui-helper-clearfix" style="position: relative;height:25px;">
+            <div style="font-size:14px;float:right;margin-top:4px">{{dia.name | Object}}</div>
+        </div>
+    </ng-template>
+</p-dropdown>

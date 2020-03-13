@@ -6,6 +6,7 @@ import { ForgotPasswordModule} from './authentication/forgot-password/forgot-pas
 import { RegisterModule} from './authentication/register/register.module';
 import { VerifyCodeModule} from './authentication/verify-code/verifyCode.module';
 import { NgprimeModule } from './authentication/ngprime/ngprime.module'
+import { DropdownModule } from 'primeng/dropdown';
 
 @NgModule({
     imports: [
@@ -14,7 +15,8 @@ import { NgprimeModule } from './authentication/ngprime/ngprime.module'
         ForgotPasswordModule,
         RegisterModule,
         VerifyCodeModule,
-        NgprimeModule
+        NgprimeModule,
+        DropdownModule
     ],
     exports:[
         
