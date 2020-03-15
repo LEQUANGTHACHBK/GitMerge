@@ -1,4 +1,5 @@
-<div class="navbar-top" *ngIf='show' [ngClass]="fuseConfig.layout.navbar.primaryBackground">
+  <!-- Nếu là thanh MAIN hay MULTISALE -->
+<div class="navbar-top" *ngIf='show && !message' [ngClass]="fuseConfig.layout.navbar.primaryBackground">
 
   <div class="logo" *ngIf="isShow" fxShow.gt-xs fxShow.gt-sm>
     <button mat-icon-button class="toggle-sidebar-folded" (click)="onclick()"  >
@@ -20,7 +21,9 @@
     </button>
   </div>
 </div>
+<!-- End  thanh MAIN hay MULTISALE -->
 
+<!-- Nếu là thanh MODULES -->
 <div class="navbar-top" *ngIf='!show' [ngClass]="fuseConfig.layout.navbar.secondaryBackground">
 
   <div class="logo" *ngIf="isShow">
@@ -43,24 +46,26 @@
     </button>
   </div>
 </div>
+<!-- END thanh MODULES -->
 
-
+<!-- Nếu là thanh MAIN hay MULTISALE -->
 <div class="navbar-scroll-container" *ngIf='show' [ngClass]="fuseConfig.layout.navbar.primaryBackground" >
 
   <div class="navbar-content">
     <fuse-navigation class="material2" layout="vertical"></fuse-navigation>
   </div>
 
-  <p *ngIf='isShow'>Powered by Doxa | V01.00.01</p>
 
 </div>
+<!-- End  thanh MAIN hay MULTISALE -->
 
+
+<!-- Nếu là thanh MODULES -->
 <div class="navbar-scroll-container" *ngIf='!show' [ngClass]="fuseConfig.layout.navbar.secondaryBackground">
 
   <div class="navbar-content">
     <fuse-navigation class="material2" layout="vertical"></fuse-navigation>
   </div>
 
-  <p *ngIf='isShow'>Powered by Doxa | V01.00.01</p>
-
 </div>
+<!-- END thanh MODULES -->

@@ -12,6 +12,9 @@ export class FuseNavigationService
     onItemCollapsed: Subject<any>;
     onItemCollapseToggled: Subject<any>;
 
+    messageSource = new BehaviorSubject<string>("");
+    currentMessage = this.messageSource.asObservable();
+
     // Private
     private _onNavigationChanged: BehaviorSubject<any>;
     private _onNavigationRegistered: BehaviorSubject<any>;
@@ -421,5 +424,9 @@ export class FuseNavigationService
 
         // Trigger the observable
         this._onNavigationItemRemoved.next(true);
+    }
+
+    changeMessage(message){
+      this.messageSource.next(message);
     }
 }

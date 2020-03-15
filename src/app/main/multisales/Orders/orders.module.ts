@@ -5,6 +5,9 @@ import { FuseSharedModule } from '@fuse/shared.module';
 import { MaterialModule } from '../../angular-Material/material.module';
 import { OrdersComponent} from './orders.component';
 
+import { AgGridModule } from 'ag-grid-angular';
+import { HttpClientModule } from '@angular/common/http';
+
 const routes = [
     {
         path: 'multisales/orders',
@@ -20,7 +23,9 @@ const routes = [
         RouterModule.forChild(routes),
         TranslateModule,
         FuseSharedModule,
-        MaterialModule
+        MaterialModule,
+        HttpClientModule,
+        AgGridModule.withComponents([])
     ],
     exports: [
         OrdersComponent,

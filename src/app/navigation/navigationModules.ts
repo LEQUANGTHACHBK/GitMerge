@@ -52,6 +52,7 @@ export const navigationModules: FuseNavigation[] = [
               title: 'Order to Cash',
               type: 'collapsable',
               icon: 'widgets',
+              // svgIcon:'group765',
               children: [
                   {
                       id: 'otcPurchaseOrder',
@@ -77,9 +78,10 @@ export const navigationModules: FuseNavigation[] = [
             id: 'directSales',
               title: 'Multi Tier Direct Sales',
               type: 'item',
-              icon: 'assessment',
+              svgIcon: 'group765',
               url: '/multisales/products/all',
-              externalUrl:true,
+              redirect: true ,
+              // externalUrl:true,
           },
           {
             id: 'setting',
@@ -110,3 +112,4 @@ export const navigationModules: FuseNavigation[] = [
       ]
     },
 ];
+
