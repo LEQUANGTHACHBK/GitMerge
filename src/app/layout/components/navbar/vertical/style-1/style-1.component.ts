@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
+import { Component, OnDestroy, OnInit, ViewChild, ViewEncapsulation, OnChanges } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
 import { Subject } from 'rxjs';
 import { delay, filter, take, takeUntil } from 'rxjs/operators';
@@ -19,7 +19,8 @@ export class NavbarVerticalStyle1Component implements OnInit, OnDestroy
     fuseConfig: any;
     navigation: any;
     isShow = true;
-    show = true;
+    show =true;
+    message:string;
     // Private
     private _fusePerfectScrollbar: FusePerfectScrollbarDirective;
     private _unsubscribeAll: Subject<any>;
@@ -157,15 +158,36 @@ export class NavbarVerticalStyle1Component implements OnInit, OnDestroy
     }
 
     onclick(){
-      this.show = !this.show ;
-      this.fixNavigation(this.show);
+      this.fixNavigation();
+      this.chechMessage();
     }
 
-    fixNavigation(show){
-      if(show){
+    // fixNavigation(show){
+    //   console.log(this._fuseNavigationService.getCurrentNavigation());
+    //   if(show){
+    //     this._fuseNavigationService.setCurrentNavigation('main');
+    //   }else{
+    //     this._fuseNavigationService.setCurrentNavigation('modules');
+    //   }
+    // }
+
+    fixNavigation(){
+      // console.log(this._fuseNavigationService.getCurrentNavigation());
+      if(this._fuseNavigationService.getCurrentNavigation()[0].id == "modules"){
         this._fuseNavigationService.setCurrentNavigation('main');
-      }else{
+        this.show = true;
+      }else if(this._fuseNavigationService.getCurrentNavigation()[0].id == "multisales"){
         this._fuseNavigationService.setCurrentNavigation('modules');
+        this.show = false;
+        // console.log(this._fuseNavigationService.getNavigationItem("main"));
       }
     }
+
+    chechMessage(){
+      this._fuseNavigationService.currentMessage.subscribe(message => this.message = message);
+      if(this.message != null){
+        console.log(this.message);
+      }
+    }
+
 }
