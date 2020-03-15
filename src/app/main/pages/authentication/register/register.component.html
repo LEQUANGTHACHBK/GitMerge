@@ -23,7 +23,7 @@
                     <input matInput formControlName="fname" placeholder="Chen">
                     <div *ngIf="registerForm.get('fname').hasError('required') && registerForm.controls.fname.touched">
                         <app-alert>
-                            <p>First Name is required</p>
+                            <p>First Name is required.</p>
                         </app-alert>
                     </div>
                 </mat-form-field>
@@ -32,7 +32,7 @@
                     <input matInput formControlName="lname" placeholder="Cecilla">
                     <div *ngIf="registerForm.get('lname').hasError('required') && registerForm.controls.lname.touched">
                         <app-alert>
-                            <p>Last Name is required</p>
+                            <p>Last Name is required.</p>
                         </app-alert>
                     </div>
                 </mat-form-field>
@@ -42,7 +42,7 @@
                     <input matInput formControlName="email" placeholder="Cecilla@gmail.com">
                     <div *ngIf="registerForm.get('email').hasError('required') && registerForm.controls.email.touched">
                         <app-alert>
-                            <p>Email is required</p>
+                            <p>Email is required.</p>
                         </app-alert>
                     </div>
                     <div *ngIf="!registerForm.get('email').hasError('required') &&
@@ -80,13 +80,13 @@
                         <div id="alertPhoneNumber">
                             <div *ngIf="registerForm.get('phoneNum').hasError('required') && registerForm.controls.phoneNum.touched">
                                 <app-alert>
-                                    <p>Phone Number is required</p>
+                                    <p>Phone Number is required.</p>
                                 </app-alert>
                             </div>
                             <div
                                 *ngIf="!registerForm.get('phoneNum').hasError('required') &&                                                                                                         registerForm.get('phoneNum').hasError('phoneNum') && registerForm.controls.phoneNum.touched">
                                 <app-alert>
-                                    <p>Phone Number must be a Number</p>
+                                    <p>Phone Number must be a number.</p>
                                 </app-alert>
                             </div>
                         </div>    
@@ -109,7 +109,7 @@
                     <input matInput type="password" formControlName="password" placeholder="********">
                     <div *ngIf="registerForm.get('password').hasError('required') && registerForm.controls.password.touched ">
                         <app-alert>
-                            <p>Password is required</p>
+                            <p>Password is required.</p>
                         </app-alert>
                     </div>
                     <div
@@ -126,13 +126,13 @@
                     <input matInput type="password" formControlName="confirmPassword" placeholder="********">
                     <div *ngIf="registerForm.get('confirmPassword').hasError('required') && registerForm.controls.confirmPassword.touched ">
                         <app-alert>
-                            <p>Confirm Password is required</p>
+                            <p>Confirm Password is required.</p>
                         </app-alert>
                     </div>
                     <div
                         *ngIf="!registerForm.get('confirmPassword').hasError('required') &&  registerForm.get('confirmPassword').hasError('mustMatch') && registerForm.controls.password.touched">
                         <app-alert>
-                            <p>Confirm password not match</p>
+                            <p>Confirm password not match.</p>
                         </app-alert>
                     </div>
                 </mat-form-field>

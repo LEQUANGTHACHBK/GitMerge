@@ -1,6 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { DialCodeComponent } from './dialCode.component';
+import { DialCodeComponent } from './dial-code.component';
 
 describe('DialCodeComponent', () => {
   let component: DialCodeComponent;

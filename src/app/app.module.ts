@@ -26,7 +26,7 @@ import { VerifyCodeComponent } from './main/pages/authentication/verify-code/ver
 import { ForgotPasswordComponent } from './main/pages/authentication/forgot-password/forgot-password.component'
 import { MultiSalesModule } from './main/multisales/multisale.module';
 import { ModulesModule } from './main/modulesAdmin/modules.module'
-import { DialCodeComponent} from './main/pages/authentication/DialCode/dialCode.component'
+import { DialCodeComponent} from './main/pages/authentication/dial-code/dial-code.component'
 //Service
 import { LoginService} from './main/pages/authentication/login/login.service'
 

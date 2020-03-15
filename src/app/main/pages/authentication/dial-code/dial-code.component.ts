@@ -9,8 +9,8 @@ import * as DIALS from '../../../../../assets/dialcode.json';
 
 @Component({
   selector: 'app-dialCode',
-  templateUrl: './dialCode.component.html',
-  styleUrls: ['./dialCode.component.scss'],
+  templateUrl: './dial-code.component.html',
+  styleUrls: ['./dial-code.component.scss'],
   encapsulation: ViewEncapsulation.Emulated,
   animations: fuseAnimations
 })

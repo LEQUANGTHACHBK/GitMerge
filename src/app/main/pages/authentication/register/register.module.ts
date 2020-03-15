@@ -5,7 +5,7 @@ import { FuseSharedModule } from '@fuse/shared.module';
 import { MaterialModule } from '../../../angular-Material/material.module';
 import { RegisterComponent } from './register.component';
 import { AlertModule } from '../../../_shared/alert/alert.module';
-import { DialCodeModule } from '../DialCode/dialCode.module';
+import { DialCodeModule } from '../dial-code/dial-code.module';
 import { DropdownModule } from 'primeng/dropdown';
 const routes = [
     {
