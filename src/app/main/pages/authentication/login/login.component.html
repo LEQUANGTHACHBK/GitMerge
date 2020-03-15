@@ -33,13 +33,13 @@
                     
                     <div  *ngIf="loginForm.get('email').hasError('required') && loginForm.controls.email.touched">
                         <app-alert>
-                            <p>Email is required</p>
+                            <p>Email is required.</p>
                         </app-alert>
                     </div>
                     <div *ngIf="!loginForm.get('email').hasError('required') &&
                                 loginForm.get('email').hasError('email') && loginForm.controls.email.touched">
                         <app-alert>
-                            <p>Please enter a valid email address</p>
+                            <p>Please enter a valid email address.</p>
                         </app-alert>
                     </div>
                 </mat-form-field>
@@ -50,12 +50,12 @@
                     <mat-icon matSuffix class="secondary-text">https</mat-icon>
                     <div *ngIf="loginForm.get('password').hasError('required') && loginForm.controls.password.touched ">
                         <app-alert>
-                            <p>Password is required</p>
+                            <p>Password is required.</p>
                         </app-alert>
                     </div>
                     <div *ngIf="!loginForm.get('password').hasError('required') && loginForm.controls.password.touched && loginForm.get('password').errors?.pattern">
                         <app-alert>
-                            <p>Password is at least 8 character</p>
+                            <p>Password is at least 8 character.</p>
                         </app-alert>
                     </div>
                 </mat-form-field>
@@ -84,7 +84,7 @@
             </div>
 
         </div>
-        <h2 class="FormFooter">Powerd by Doxa</h2>
+        <h2 class="FormFooter">Powered by Doxa</h2>
     </div>
     
 </div>
