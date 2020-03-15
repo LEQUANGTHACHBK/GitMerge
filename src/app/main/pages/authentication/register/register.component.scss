@@ -1,5 +1,26 @@
 @import "src/@fuse/scss/fuse";
-
+:host {
+    ::ng-deep .ui-dropdown{
+      width: 100%;
+      height: 48px;
+      margin: 20px auto;
+      border: none;
+      box-shadow: 0px 3px 16px #00000029 !important;
+      border-radius: 8px;
+    }
+    ::ng-deep .ui-dropdown-label{
+      vertical-align: middle;
+      padding: 0px 10px;
+      height: 48px;
+      margin: 0px;
+      line-height: 48px;
+      color: #788190;
+    }
+    ::ng-deep .ui-dropdown-item:hover	{
+    // color:white ;
+    // background-color:gray !important; 
+  }
+}    
 #register {
   width: 100%;
   background: url("assets/DoxaImages/background.jpg") no-repeat;
@@ -85,6 +106,9 @@
         mat-option{
           color: #788190 !important;
         }
+        #designation {
+          margin: 20px 0px;
+        }
         #phoneNumber{
             // background-color: red;
             width: 100%;
@@ -93,12 +117,13 @@
             #phoneCode{
                 width: 40%;
                 display: inline-block;
-                margin-right: 10%;
+                margin-right: 5%;
                 // height: 60px;
                 vertical-align: middle;
+
             }
             #phoneNum{
-                width: 50%;
+                width: 55%;
                 input{
                     // height: 60px;
                     // margin-top: 5px;

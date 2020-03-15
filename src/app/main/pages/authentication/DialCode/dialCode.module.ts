@@ -3,20 +3,20 @@ import { RouterModule } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
 import { FuseSharedModule } from '@fuse/shared.module';
 import { MaterialModule } from '../../../angular-Material/material.module';
-import { NgprimeComponent } from './ngprime.component';
+import { DialCodeComponent } from './dialCode.component';
 import { AlertModule } from '../../../_shared/alert/alert.module';
 import { DropdownModule } from 'primeng/dropdown';
-// import { SelectItem } from 'primeng/api';
+
 const routes = [
     {
         path: 'ngprime',
-        component: NgprimeComponent
+        component: DialCodeComponent
     }
 ];
 
 @NgModule({
     declarations: [
-        NgprimeComponent
+        DialCodeComponent
     ],
     imports: [
         RouterModule.forChild(routes),
@@ -27,10 +27,10 @@ const routes = [
         DropdownModule
     ],
     exports: [
-        NgprimeComponent,
+        DialCodeComponent,
     ]
 })
 
-export class NgprimeModule
+export class DialCodeModule
 {
 }

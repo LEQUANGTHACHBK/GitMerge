@@ -1,0 +1,27 @@
+:host {
+    ::ng-deep .ui-dropdown{
+        min-width: 50px !important;
+    }
+    ::ng-deep .ui-dropdown-panel{
+        min-width: 300px !important;
+    }
+    ::ng-deep .ui-dropdown-item	{
+        
+        vertical-align: middle !important;
+        margin: 1px 0px;
+    }
+}    
+// .ui-dropdown	{
+//   background-color:black;
+// }
+// .ui-dropdown-label	{
+//   color:white;
+// }
+
+// .ui-dropdown-label:hover{
+//   color:red
+// }
+// .ui-dropdown-item	{
+//   color:white;
+//   background-color:black; 
+// }

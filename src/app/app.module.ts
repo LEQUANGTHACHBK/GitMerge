@@ -26,7 +26,7 @@ import { VerifyCodeComponent } from './main/pages/authentication/verify-code/ver
 import { ForgotPasswordComponent } from './main/pages/authentication/forgot-password/forgot-password.component'
 import { MultiSalesModule } from './main/multisales/multisale.module';
 import { ModulesModule } from './main/modulesAdmin/modules.module'
-import { NgprimeComponent} from './main/pages/authentication/ngprime/ngprime.component'
+import { DialCodeComponent} from './main/pages/authentication/DialCode/dialCode.component'
 //Service
 import { LoginService} from './main/pages/authentication/login/login.service'
 
@@ -36,7 +36,7 @@ const appRoutes: Routes = [
     },
     {
         path :'ngprime',
-        component: NgprimeComponent
+        component: DialCodeComponent
     },
     {
         path: 'register',

@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { NgprimeComponent } from './ngprime.component';
+import { DialCodeComponent } from './dialCode.component';
 
-describe('NgprimeComponent', () => {
-  let component: NgprimeComponent;
-  let fixture: ComponentFixture<NgprimeComponent>;
+describe('DialCodeComponent', () => {
+  let component: DialCodeComponent;
+  let fixture: ComponentFixture<DialCodeComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ NgprimeComponent ]
+      declarations: [ DialCodeComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(NgprimeComponent);
+    fixture = TestBed.createComponent(DialCodeComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

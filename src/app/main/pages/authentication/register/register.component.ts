@@ -6,8 +6,9 @@ import { takeUntil } from 'rxjs/internal/operators';
 import { FuseConfigService } from '@fuse/services/config.service';
 import { fuseAnimations } from '@fuse/animations';
 import { animation } from '@angular/animations';
-
+import { SelectItem } from 'primeng/api';
 import { MustMatch } from '../_helper/must-match.validator';
+
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
@@ -15,13 +16,23 @@ import { MustMatch } from '../_helper/must-match.validator';
   encapsulation: ViewEncapsulation.Emulated,
   animations: fuseAnimations
 })
+
+
 export class RegisterComponent implements OnInit {
   registerForm  : FormGroup;
   private _unsubscribeAll: Subject<any>;
+  designations : SelectItem[];
+  selectedDesignation: string;
   constructor(
     private _fuseConfigService: FuseConfigService,
     private _formBuilder: FormBuilder
   ) { 
+    this.designations = [
+      { value: "Mr.", label: "Mr."},
+      { value: "Ms.", label: "Ms." },
+      { value: "Mrs.", label: "Mrs." },
+      { value: "Miss.", label: "Miss." }
+    ]
     this._fuseConfigService.config = {
       layout: {
         navbar: {

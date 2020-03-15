@@ -54,26 +54,25 @@
                 </mat-form-field>
 
                 <mat-label class="secondary-text">Designation</mat-label>
-                <mat-form-field appearance="none" >
-                    <mat-select value="mr" >
-                        <mat-option value="mr"> Mr.</mat-option>
-                        <mat-option value="ms"> Ms.</mat-option>
-                        <mat-option value="mrs"> Mrs.</mat-option>
-                        <mat-option value="miss"> Miss</mat-option>
-                    </mat-select>
-                </mat-form-field>
+
+                <p-dropdown id="designation" [options]="designations" [(ngModel)]="selectedDesignation" [style]="{'width':'100%','height':'48px'}">
+                    <ng-template let-item pTemplate="selectedItem">
+                        <span style="vertical-align:middle">{{item.value}}</span>
+                    </ng-template>
+                    <ng-template let-dis pTemplate="item">
+                        <div class="ui-helper-clearfix" style="position: relative;height:25px;">
+                            <div style="font-size:14px;float:left;margin-top:4px">{{dis.value}}</div>
+                        </div>
+                    </ng-template>
+                </p-dropdown>
 
                 <mat-label class="secondary-text">Phone Number</mat-label>
                 <div id="phoneNumber">
-                        <mat-form-field appearance="none" id="phoneCode" >
-                            <mat-select value="00">
-                                <mat-option class="secondary-text" value="00"> +45</mat-option>
-                                <mat-option value="01"> +46</mat-option>
-                                <mat-option value="02"> +47</mat-option>
-                                <mat-option value="03"> +48</mat-option>
-                            </mat-select>
+                        <div id="phoneCode">
+                            <app-dialCode></app-dialCode>
+                        </div>
                         
-                        </mat-form-field>
+
                         <mat-form-field appearance="none" id="phoneNum">
                             <input matInput formControlName="phoneNum" placeholder="123456">
                         </mat-form-field>

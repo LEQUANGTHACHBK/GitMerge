@@ -5,7 +5,7 @@ import { LoginModule} from './authentication/login/login.module';
 import { ForgotPasswordModule} from './authentication/forgot-password/forgot-password.module';
 import { RegisterModule} from './authentication/register/register.module';
 import { VerifyCodeModule} from './authentication/verify-code/verifyCode.module';
-import { NgprimeModule } from './authentication/ngprime/ngprime.module'
+import { DialCodeModule } from './authentication/DialCode/dialCode.module'
 import { DropdownModule } from 'primeng/dropdown';
 
 @NgModule({
@@ -15,7 +15,7 @@ import { DropdownModule } from 'primeng/dropdown';
         ForgotPasswordModule,
         RegisterModule,
         VerifyCodeModule,
-        NgprimeModule,
+        DialCodeModule,
         DropdownModule
     ],
     exports:[
