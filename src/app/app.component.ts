@@ -16,9 +16,6 @@ import { navigationModules } from 'app//navigation/navigationModules';
 import { locale as navigationEnglish } from 'app/navigation/i18n/en';
 import { locale as navigationTurkish } from 'app/navigation/i18n/tr';
 
-import { MatIconRegistry } from '@angular/material/icon';
-import { DomSanitizer } from '@angular/platform-browser';
-
 @Component({
     selector   : 'app',
     templateUrl: './app.component.html',
@@ -53,12 +50,7 @@ export class AppComponent implements OnInit, OnDestroy
         private _fuseSplashScreenService: FuseSplashScreenService,
         private _fuseTranslationLoaderService: FuseTranslationLoaderService,
         private _translateService: TranslateService,
-        private _platform: Platform,
-
-
-        //SVG Icons
-        private _matIconRegistry: MatIconRegistry,
-        private _domSanitizer : DomSanitizer,
+        private _platform: Platform
     )
     {
         // Get default navigation
@@ -125,20 +117,6 @@ export class AppComponent implements OnInit, OnDestroy
 
         // Set the private defaults
         this._unsubscribeAll = new Subject();
-
-        //Create Icon SVG
-        this._matIconRegistry.addSvgIcon(
-          "group765",
-          this._domSanitizer.bypassSecurityTrustResourceUrl("../assets/icons/doxa-icons/Group 765.svg")
-        );
-        this._matIconRegistry.addSvgIcon(
-          "yes",
-          this._domSanitizer.bypassSecurityTrustResourceUrl("../assets/icons/doxa-icons/Yes.svg")
-        );
-        this._matIconRegistry.addSvgIcon(
-          "no",
-          this._domSanitizer.bypassSecurityTrustResourceUrl("../assets/icons/doxa-icons/No.svg")
-        );
     }
 
     // -----------------------------------------------------------------------------------------------------

@@ -5,10 +5,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule, Routes } from '@angular/router';
 import { MaterialModule } from './main/angular-Material/material.module'
 import { TranslateModule } from '@ngx-translate/core';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms'
+import { FormsModule, ReactiveFormsModule} from '@angular/forms'
 import { DropdownModule } from 'primeng/dropdown';
 import 'hammerjs';
-import { AgGridModule } from 'ag-grid-angular';
 
 import { FuseModule } from '@fuse/fuse.module';
 import { FuseSharedModule } from '@fuse/shared.module';
@@ -27,14 +26,17 @@ import { VerifyCodeComponent } from './main/pages/authentication/verify-code/ver
 import { ForgotPasswordComponent } from './main/pages/authentication/forgot-password/forgot-password.component'
 import { MultiSalesModule } from './main/multisales/multisale.module';
 import { ModulesModule } from './main/modulesAdmin/modules.module'
+import { DialCodeComponent} from './main/pages/authentication/dial-code/dial-code.component'
+//Service
+import { LoginService} from './main/pages/authentication/login/login.service'
 
 const appRoutes: Routes = [
-    // {
-    //     path      : 'pages',
-    //     loadChildren: './main/pages/pages.module#PagesModule'
-    // },
     {   path: 'login',
         component: LoginComponent
+    },
+    {
+        path :'ngprime',
+        component: DialCodeComponent
     },
     {
         path: 'register',
@@ -72,8 +74,9 @@ const appRoutes: Routes = [
         HttpClientModule,
         RouterModule.forRoot(appRoutes),
         TranslateModule.forRoot(),
-        AgGridModule.withComponents(),
-
+        FormsModule,
+        ReactiveFormsModule,
+        
         PagesModule,
         ShareModule,
         MultiSalesModule,
@@ -91,8 +94,12 @@ const appRoutes: Routes = [
 
         // App modules
         LayoutModule,
-        SampleModule
+        SampleModule,
+        // ngprime
+        DropdownModule
     ],
+    providers: [LoginService]
+    ,
     bootstrap   : [
         AppComponent
     ]

@@ -3,13 +3,7 @@ import { RouterModule } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
 import { FuseSharedModule } from '@fuse/shared.module';
 import { MaterialModule } from '../../../angular-Material/material.module';
-import { InventoryComponent} from './Inventory.component';
-
-import { AgGridModule } from 'ag-grid-angular';
-
-import { HttpClientModule } from '@angular/common/http';
-
-import { ActiveCellCustomComponent } from './active-cell/active-cell.component'; //Yes or No
+import { InventoryComponent} from './Inventory.component'
 
 const routes = [
     {
@@ -20,20 +14,14 @@ const routes = [
 
 @NgModule({
     declarations: [
-        InventoryComponent,
-        ActiveCellCustomComponent, //Yes or No
+        InventoryComponent
     ],
     imports: [
         RouterModule.forChild(routes),
         TranslateModule,
         FuseSharedModule,
-        MaterialModule,
-
-        HttpClientModule,
-        AgGridModule.withComponents([])
+        MaterialModule
     ],
-    providers:[],
-    entryComponents:[ActiveCellCustomComponent], //Yes or No
     exports: [
         InventoryComponent,
     ]

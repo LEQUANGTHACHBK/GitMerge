@@ -23,8 +23,7 @@
             font-weight: normal;
             padding-left: 0px;
             margin-top: 8px;
-            margin-bottom: 8px;
-            font-size: 21px;
+            font-size: 18px;
             white-space: nowrap;
             justify-content: center;
         }
@@ -67,8 +66,7 @@
             }
 
             &:hover {
-                // background-color: grey;
-                background: rgba(226, 223, 223, 0.12);
+                background-color: grey;
             }
 
             .mat-ripple-element {
@@ -153,8 +151,7 @@
                 transition: background 200ms ease-in-out;
 
                 &.open {
-                  /////FIxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-                    background: rgba(226, 223, 223, 0.12);
+                    background: rgba(0, 0, 0, 0.12);
                 }
             }
         }
