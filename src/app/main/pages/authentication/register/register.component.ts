@@ -20,6 +20,7 @@ import { MustMatch } from '../_helper/must-match.validator';
 
 export class RegisterComponent implements OnInit {
   registerForm  : FormGroup;
+  disableAdName = true;
   private _unsubscribeAll: Subject<any>;
   designations : SelectItem[];
   selectedDesignation: string;
@@ -27,6 +28,7 @@ export class RegisterComponent implements OnInit {
     private _fuseConfigService: FuseConfigService,
     private _formBuilder: FormBuilder
   ) { 
+    
     this.designations = [
       { value: "Mr.", label: "Mr."},
       { value: "Ms.", label: "Ms." },
@@ -59,7 +61,7 @@ export class RegisterComponent implements OnInit {
       email: ['', [Validators.required, Validators.email]],
       phoneNum: ['', [Validators.required, phoneNumberValidator]],
       AdId:[],
-      AdNa:[],
+      AdNa: [],
       // password: ['', [Validators.required, Validators.pattern('^.{8,}$')]],
       password: ['', [Validators.required, Validators.minLength(8)]],
       // confirmPassword: ['', [Validators.required,confirmPasswordValidator]],

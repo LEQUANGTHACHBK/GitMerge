@@ -99,9 +99,8 @@
                 </mat-form-field>
 
                 <mat-label class="secondary-text">Advisor Name</mat-label>
-                <mat-form-field appearance="none">
-                    <input matInput formControlName="AdNa" placeholder="Filla Wong">
-                    
+                <mat-form-field appearance="none" >
+                    <input matInput formControlName="AdNa" placeholder="Filla Wong" [disabled]="registerForm.get('AdNa').disable()"  >
                 </mat-form-field>
 
                 <mat-label class="secondary-text">Password</mat-label>
